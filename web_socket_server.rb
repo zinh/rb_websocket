@@ -6,7 +6,7 @@ require 'base64'
 class WebSocketServer
   WS_MAGIC_STRING = "258EAFA5-E914-47DA-95CA-C5AB0DC85B11"
 
-  def initialize(options = {path: '/', port: 4567, host: 'localhost'})
+  def initialize(options = {path: '/', port: 4567, host: '0.0.0.0'})
     @path, port, host = options[:path], options[:port], options[:host]
     @tcp_server = TCPServer.new(host, port)
   end
